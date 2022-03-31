@@ -48,7 +48,7 @@ def define_model() -> tf.keras.models.Sequential:
     
     model.add(tf.keras.layers.Dense(1))
 
-    model.compile(loss='categorical_crossentropy')
+    model.compile(loss='categorical_crossentropy', measure=["accuracy"])
 
     try:
         model.load_weights("./weights.h5")
