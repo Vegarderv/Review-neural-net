@@ -48,7 +48,7 @@ def define_model() -> tf.keras.models.Sequential:
     
     model.add(tf.keras.layers.Dense(1))
 
-    model.compile(loss='categorical_crossentropy', measure=["accuracy"])
+    model.compile(loss='categorical_crossentropy', metrics=["accuracy"])
 
     try:
         model.load_weights("./weights.h5")
@@ -72,7 +72,7 @@ def learn_model_from_data(no_epochs: int = 50) -> tf.keras.models.Sequential:
 
     model.fit(
         *train_data,
-        batch_size=16384,
+        batch_size=100,
         epochs=no_epochs,
         verbose=1,
         validation_data=test_data
