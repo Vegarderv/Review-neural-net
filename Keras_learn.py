@@ -39,7 +39,7 @@ def define_model() -> tf.keras.models.Sequential:
     model = tf.keras.models.Sequential()
 
     model.add(                          # Add a layer to the sequential model
-        tf.keras.layers.Embedding(input_dim=tf_data["vocab_size"], output_dim=50, input_length=tf_data["max_length"])
+        tf.keras.layers.Embedding(input_dim=vocab_size, output_dim=50, input_length=max_length)
     )
 
     model.add(
